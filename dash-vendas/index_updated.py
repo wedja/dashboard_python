@@ -17,12 +17,12 @@ server = app.server
 app.layout = html.Div([
     html.Div([
         html.Div([
-            html.H3('Sales Dashboard', style={'margin-bottom': '0px', 'color': 'white'})
+            html.H3('Painel de Vendas', style={'margin-bottom': '0px', 'color': 'white'})
 
         ], className='one-third column', id = 'title1'),
 
         html.Div([
-            html.P('Year', className='fix_label', style= {'color': 'white'}),
+            html.P('Anos', className='fix_label', style= {'color': 'white'}),
             dcc.Slider(id = 'select_years',
                        included=False,
                        updatemode='drag',
@@ -37,7 +37,7 @@ app.layout = html.Div([
         ], className='one-half column', id = 'title2'),
 
 html.Div([
-            html.P('Segment', className='fix_label', style= {'color': 'white'}),
+            html.P('Segmento', className='fix_label', style= {'color': 'white'}),
             dcc.RadioItems(id = 'radio_items',
                        labelStyle = {'display': 'inline-block'},
                        value='Consumer',
@@ -178,7 +178,7 @@ def update_graph(select_years, radio_items, radio_items1):
 
 
         'layout': go.Layout(
-            title={'text': 'Sales by Sub-Category' + ' ' + str((select_years)),
+            title={'text': 'Vendas por sub-categoria no ano de' + ' ' + str((select_years)),
                    'y': 0.99,
                    'x': 0.5,
                    'xanchor': 'center',
@@ -333,7 +333,7 @@ def update_graph(select_years, radio_items):
             )],
 
             'layout': go.Layout(
-                title={'text': 'Sales by Category in year' + ' ' + str((select_years)),
+                title={'text': 'Vendas por categoria no ano de' + ' ' + str((select_years)),
                        'y': 0.93,
                        'x': 0.5,
                        'xanchor': 'center',
@@ -387,7 +387,7 @@ def update_graph(select_years, radio_items):
 
 
         'layout': go.Layout(
-            title={'text': 'Sales Trend in Year' + ' ' + str((select_years)),
+            title={'text': 'Tendência de vendas no ano de' + ' ' + str((select_years)),
                    'y': 0.99,
                    'x': 0.5,
                    'xanchor': 'center',
@@ -444,7 +444,7 @@ def update_graph(select_years):
 
     return [
 
-        html.H6(children='Current Year',
+        html.H6(children='Ano atual',
                 style={'textAlign': 'center',
                        'color': 'white'}),
 
@@ -465,7 +465,7 @@ def update_graph(select_years):
 
     return [
 
-        html.H6(children='Previous Year',
+        html.H6(children='Ano anterior',
                 style={'textAlign': 'center',
                        'color': 'white'}),
 
@@ -487,7 +487,7 @@ def update_graph(select_years):
 
     return [
 
-        html.H6(children='YOY Growth',
+        html.H6(children='Crescimento',
                 style={'textAlign': 'center',
                        'color': 'white'}),
 
@@ -542,7 +542,7 @@ def update_graph(select_years, radio_items, radio_items2):
 
 
         'layout': go.Layout(
-            title={'text': 'Sales by State in year' + ' ' + str((select_years)),
+            title={'text': 'vendas por estado no ano de ' + ' ' + str((select_years)),
                    'y': 0.99,
                    'x': 0.5,
                    'xanchor': 'center',
@@ -702,7 +702,7 @@ def update_graph(select_years, radio_items):
             ],
 
             'layout': go.Layout(
-                title={'text': 'Sales by state and city in Year' + ' ' + str((select_years)),
+                title={'text': 'vendas por estado e cidade no ano de ' + ' ' + str((select_years)),
                        'y': 0.99,
                        'x': 0.5,
                        'xanchor': 'center',
